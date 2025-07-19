@@ -1,6 +1,6 @@
 [project]
 name = "jvm"
-version = "0.1.0"
+version = "0.1.0rc1"
 description = "JVM bindings for Python that enable seamless integration between Python and Java code through JNI (Java Native Interface)."
 readme = "README.md"
 authors = [{ name = "t3tra-dev", email = "admin@t3tra.net" }]

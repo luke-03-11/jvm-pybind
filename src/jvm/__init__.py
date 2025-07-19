@@ -22,4 +22,7 @@ __all__ = [
     "logger",
     "siteinit",
     "typeconv",
+    "__version__",
 ]
+
+__version__ = "0.1.0rc1"
