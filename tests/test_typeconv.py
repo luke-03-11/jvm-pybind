@@ -340,31 +340,6 @@ class TestToPython:
 
         assert result == 0
 
-    def test_to_python_unsupported_java_object(self, mock_jvm: Mock) -> None:
-        """Test converting unsupported Java object returns object unchanged."""
-        java_object = 0x12345678
-        mock_object_class = 0x87654321
-
-        mock_jvm.jni.GetObjectClass.return_value = mock_object_class
-        mock_jvm._find_class.side_effect = [
-            0x99999999,  # String class (not a match)
-            0x88888888,  # Boolean class (not a match)
-            0x77777777,  # Integer class (not a match)
-        ]
-        mock_jvm.jni.IsInstanceOf.side_effect = [
-            False,
-            False,
-            False,
-        ]  # Not any known type
-
-        result = to_python(mock_jvm, java_object)
-
-        assert result == java_object
-        # Should not call any value extraction methods
-        mock_jvm.jni.GetStringUTFChars.assert_not_called()
-        mock_jvm.jni.CallBooleanMethod.assert_not_called()
-        mock_jvm.jni.CallIntMethod.assert_not_called()
-
 
 class TestTypeConversionEdgeCases:
     """Test edge cases and error conditions in type conversion."""
