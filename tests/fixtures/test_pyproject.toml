@@ -1,0 +1,26 @@
+[project]
+name = "test-jvm-project"
+version = "0.1.0"
+description = "Test project for JVM-PyBind testing"
+authors = [
+    { name = "Test Author", email = "test@example.com" }
+]
+requires-python = ">=3.12"
+dependencies = ["jvm"]
+
+[tool.jvm]
+java-version = "17"
+classpath = [
+    "lib/test.jar",
+    "lib/another.jar",
+    "build/classes"
+]
+
+[tool.jvm.deps]
+maven = [
+    "org.apache.commons:commons-lang3:3.12.0",
+    "junit:junit:4.13.2"
+]
+gradle = [
+    "implementation 'com.google.guava:guava:31.1-jre'"
+]

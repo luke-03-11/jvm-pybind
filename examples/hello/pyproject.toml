@@ -1,0 +1,13 @@
+[project]
+name = "examples-hello"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "t3tra-dev", email = "admin@t3tra.net" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.jvm]
+java-version = "21"
+classpath = ["./hello.jar"]
