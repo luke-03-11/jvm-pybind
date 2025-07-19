@@ -58,6 +58,17 @@ python -m jvm --install-stub
 python -m jvm --uninstall-stub
 ```
 
+### PTH ファイルインストール
+
+仮想環境で自動的に JVM インポートを有効にする .pth ファイルをインストール:
+
+```bash
+# 自動インポート用の jvm.pth ファイルをインストール
+python -m jvm --install-pth
+```
+
+これにより、仮想環境の `site-packages` ディレクトリに `jvm.pth` ファイルが作成され、Python 起動時に自動的に JVM モジュールがインポートされ、手動初期化なしでシームレスに Java クラスをインポートできるようになります。
+
 ### 機能
 
 **型スタブ管理:**
@@ -66,6 +77,12 @@ python -m jvm --uninstall-stub
 - **スタブアンインストール**: インストールされた全ての Java 型スタブをクリーンに削除
 - **自動生成**: 必要に応じて JVM インストールから新しいスタブを生成
 - **仮想環境検出**: venv、virtualenv、conda、その他の Python 環境マネージャーと連携
+
+**PTH ファイル管理:**
+
+- **PTH ファイルインストール**: Python 起動時に自動的に JVM モジュールをインポートする `jvm.pth` ファイルを仮想環境に作成
+- **自動インポート**: 手動の JVM 初期化なしでシームレスな Java クラスインポートを実現
+- **仮想環境安全性**: アクティブな仮想環境内でのみ動作し、分離されたセットアップを保証
 
 **サポートされるパッケージ:**
 
@@ -91,6 +108,9 @@ pip install jvm
 # IDEサポート用の型スタブをインストール
 python -m jvm --install-stub
 
+# または自動JVMインポート用のPTHファイルをインストール
+python -m jvm --install-pth
+
 # IDEで自動補完が利用可能になります
 from java.lang import System  # IDEが利用可能なメソッドを表示
 ```
@@ -104,7 +124,7 @@ python -m jvm --help
 出力:
 
 ```
-usage: jvm [-h] (--install-stub | --uninstall-stub)
+usage: jvm [-h] (--install-stub | --uninstall-stub | --install-pth)
 
 JVM-PyBind: Python bindings for JVM with type stub management
 
@@ -112,10 +132,13 @@ options:
   -h, --help         show this help message and exit
   --install-stub     Install JDK type stubs to the current virtual environment
   --uninstall-stub   Remove JDK type stubs from the current virtual environment
+  --install-pth      Install jvm.pth file to enable automatic JVM import in
+                     virtual environment
 
 Examples:
   python -m jvm --install-stub     Install JDK type stubs to virtual environment
   python -m jvm --uninstall-stub   Remove JDK type stubs from virtual environment
+  python -m jvm --install-pth      Install jvm.pth file to enable automatic JVM import
 ```
 
 ### カスタム Java クラスの使用 (実験的機能)

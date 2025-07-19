@@ -58,6 +58,17 @@ Remove type stubs when no longer needed:
 python -m jvm --uninstall-stub
 ```
 
+### PTH File Installation
+
+Install a .pth file to enable automatic JVM import in your virtual environment:
+
+```bash
+# Install jvm.pth file for automatic import
+python -m jvm --install-pth
+```
+
+This creates a `jvm.pth` file in your virtual environment's `site-packages` directory that automatically imports the JVM module when Python starts, enabling seamless Java class imports without manual initialization.
+
 ### Features
 
 **Type Stub Management:**
@@ -66,6 +77,12 @@ python -m jvm --uninstall-stub
 - **Uninstall stubs**: Cleanly removes all installed Java type stubs
 - **Auto-generation**: Generates fresh stubs from your JVM installation if needed
 - **Virtual environment detection**: Works with venv, virtualenv, conda, and other Python environment managers
+
+**PTH File Management:**
+
+- **Install PTH file**: Creates a `jvm.pth` file in your virtual environment that automatically imports the JVM module at Python startup
+- **Automatic import**: Enables seamless Java class imports without manual JVM initialization
+- **Virtual environment safety**: Only works within active virtual environments for isolated setup
 
 **Supported Packages:**
 
@@ -91,6 +108,9 @@ pip install jvm-pybind
 # Install type stubs for IDE support
 python -m jvm --install-stub
 
+# OR install PTH file for automatic JVM import
+python -m jvm --install-pth
+
 # Now you get autocompletion in your IDE
 from java.lang import System  # IDE will show available methods
 ```
@@ -104,7 +124,7 @@ python -m jvm --help
 Output:
 
 ```
-usage: jvm [-h] (--install-stub | --uninstall-stub)
+usage: jvm [-h] (--install-stub | --uninstall-stub | --install-pth)
 
 JVM-PyBind: Python bindings for JVM with type stub management
 
@@ -112,10 +132,13 @@ options:
   -h, --help         show this help message and exit
   --install-stub     Install JDK type stubs to the current virtual environment
   --uninstall-stub   Remove JDK type stubs from the current virtual environment
+  --install-pth      Install jvm.pth file to enable automatic JVM import in
+                     virtual environment
 
 Examples:
   python -m jvm --install-stub     Install JDK type stubs to virtual environment
   python -m jvm --uninstall-stub   Remove JDK type stubs from virtual environment
+  python -m jvm --install-pth      Install jvm.pth file to enable automatic JVM import
 ```
 
 ### Working with Custom Java Classes (Experimental)

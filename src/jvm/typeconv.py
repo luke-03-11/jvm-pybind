@@ -33,9 +33,15 @@ def to_python(jvm: JVM, jobject: Any) -> object:
     if isinstance(jobject, (dict, list, tuple, set)):
         return jobject
 
+    # Try to get object class first
     try:
-        cls = jvm.jni.GetObjectClass(jobject)  # noqa
+        jvm.jni.GetObjectClass(jobject)
     except (TypeError, ValueError, ctypes.ArgumentError):
+        # If we can't get the class but jobject looks like a valid JNI reference,
+        # create an ObjectProxy anyway
+        if isinstance(jobject, (int, ctypes.c_void_p)) and jobject != 0:
+            from .proxy import ObjectProxy
+            return ObjectProxy(jvm, jobject)
         return jobject
 
     # String
@@ -60,4 +66,6 @@ def to_python(jvm: JVM, jobject: Any) -> object:
             raise RuntimeError("Could not find Integer.intValue method")
         return int(jvm.jni.CallIntMethod(jobject, mid))
 
-    return jobject
+    # For any other Java object, create an ObjectProxy
+    from .proxy import ObjectProxy
+    return ObjectProxy(jvm, jobject)

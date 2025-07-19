@@ -221,6 +221,26 @@ class StubInstaller:
         logger.info("✓ Stub uninstallation completed!")
         return True
 
+    def install_pth(self) -> bool:
+        """JVM .pth ファイルインストール"""
+        site_packages = self.venv_detector.detect_venv()
+        if not site_packages:
+            self._log_venv_error()
+            return False
+
+        pth_file = site_packages / "jvm.pth"
+        logger.info(f"Installing jvm.pth to: {pth_file}")
+
+        try:
+            with open(pth_file, "w", encoding="utf-8") as f:
+                f.write("import jvm\n")
+            logger.info("✓ jvm.pth file installed successfully!")
+            logger.info("Now you can use 'from java.lang import System' directly in any Python script")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to create jvm.pth file: {e}")
+            return False
+
 
 def create_parser() -> argparse.ArgumentParser:
     """Create command line argument parser"""
@@ -232,6 +252,7 @@ def create_parser() -> argparse.ArgumentParser:
 Examples:
   python -m jvm --install-stub     Install JDK type stubs to virtual environment
   python -m jvm --uninstall-stub   Remove JDK type stubs from virtual environment
+  python -m jvm --install-pth      Install jvm.pth file to enable automatic JVM import
         """,
     )
 
@@ -245,6 +266,11 @@ Examples:
         "--uninstall-stub",
         action="store_true",
         help="Remove JDK type stubs from the current virtual environment",
+    )
+    group.add_argument(
+        "--install-pth",
+        action="store_true",
+        help="Install jvm.pth file to enable automatic JVM import in virtual environment",
     )
     return parser
 
@@ -261,6 +287,8 @@ def main() -> int:
             success = installer.install_stubs(force_regenerate=False)
         elif args.uninstall_stub:
             success = installer.uninstall_stubs()
+        elif args.install_pth:
+            success = installer.install_pth()
         else:
             parser.print_help()
             return 1
