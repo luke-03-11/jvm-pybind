@@ -1,5 +1,5 @@
 [project]
-name = "jvm"
+name = "jvm-pybind"
 version = "0.1.0rc1"
 description = "JVM bindings for Python that enable seamless integration between Python and Java code through JNI (Java Native Interface)."
 readme = "README.md"
@@ -16,7 +16,7 @@ dev = [
     "black>=25.1.0",
     "flake8>=7.3.0",
     "isort>=6.0.1",
-    "jvm",
+    "jvm-pybind",
     "mypy>=1.16.1",
     "pyright>=1.1.403",
     "pytest>=8.4.1",

@@ -135,8 +135,8 @@ wheels = [
 ]
 
 [[package]]
-name = "jvm"
-version = "0.1.0"
+name = "jvm-pybind"
+version = "0.1.0rc1"
 source = { editable = "." }
 
 [package.dev-dependencies]
@@ -144,7 +144,7 @@ dev = [
     { name = "black" },
     { name = "flake8" },
     { name = "isort" },
-    { name = "jvm" },
+    { name = "jvm-pybind" },
     { name = "mypy" },
     { name = "pyright" },
     { name = "pytest" },
@@ -161,7 +161,7 @@ dev = [
     { name = "black", specifier = ">=25.1.0" },
     { name = "flake8", specifier = ">=7.3.0" },
     { name = "isort", specifier = ">=6.0.1" },
-    { name = "jvm", editable = "." },
+    { name = "jvm-pybind" },
     { name = "mypy", specifier = ">=1.16.1" },
     { name = "pyright", specifier = ">=1.1.403" },
     { name = "pytest", specifier = ">=8.4.1" },
