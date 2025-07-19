@@ -402,7 +402,7 @@ jvm-pybind/
 │   ├── typeconv.py    # 型変換ユーティリティ
 │   └── import_hook/   # Pythonインポートフック
 ├── examples/          # 使用例
-└── tests/            # テストスイート
+└── tests/             # テストスイート
 ```
 
 ## サポートされる Java 型

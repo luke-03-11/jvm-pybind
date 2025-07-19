@@ -402,7 +402,7 @@ jvm-pybind/
 │   ├── typeconv.py    # Type conversion utilities
 │   └── import_hook/   # Python import hook
 ├── examples/          # Usage examples
-└── tests/            # Test suite
+└── tests/             # Test suite
 ```
 
 ## Supported Java Types
