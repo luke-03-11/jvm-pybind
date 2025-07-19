@@ -235,7 +235,9 @@ class StubInstaller:
             with open(pth_file, "w", encoding="utf-8") as f:
                 f.write("import jvm\n")
             logger.info("✓ jvm.pth file installed successfully!")
-            logger.info("Now you can use 'from java.lang import System' directly in any Python script")
+            logger.info(
+                "Now you can use 'from java.lang import System' directly in any Python script"
+            )
             return True
         except Exception as e:
             logger.error(f"Failed to create jvm.pth file: {e}")

@@ -41,6 +41,7 @@ def to_python(jvm: JVM, jobject: Any) -> object:
         # create an ObjectProxy anyway
         if isinstance(jobject, (int, ctypes.c_void_p)) and jobject != 0:
             from .proxy import ObjectProxy
+
             return ObjectProxy(jvm, jobject)
         return jobject
 
@@ -68,4 +69,5 @@ def to_python(jvm: JVM, jobject: Any) -> object:
 
     # For any other Java object, create an ObjectProxy
     from .proxy import ObjectProxy
+
     return ObjectProxy(jvm, jobject)
