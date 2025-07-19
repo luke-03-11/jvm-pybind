@@ -19,7 +19,7 @@ JVM bindings for Python that enable seamless integration between Python and Java
 ### Installation
 
 ```bash
-pip install jvm
+pip install jvm-pybind
 ```
 
 ### Basic Usage
